@@ -16,6 +16,12 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <ControlTemplate x:Key="EnemyTemplate" TargetType="{x:Type ContentControl}">
+            <Grid>
+                <Ellipse Fill="Red" Stroke="Black" Height="100" Width="100"/>
+            </Grid>
+        </ControlTemplate>
     </Window.Resources>
     <Grid Background="Black">
         <Grid.ColumnDefinitions>
@@ -42,11 +48,11 @@
                     <GradientStop Color="#FFFFFCFC" Offset="0.82"/>
                 </LinearGradientBrush>
             </Canvas.Background>
+            <TextBox x:Name="gameOverText" Height="119" Canvas.Left="55" TextWrapping="Wrap" Text="Game Over" Canvas.Top="41" Width="710" TextChanged="TextBox_TextChanged" FontFamily="Arial Black" FontSize="100" FontWeight="Bold" FontStyle="Italic" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             <StackPanel Canvas.Left="28" Orientation="Vertical" Canvas.Top="26" Width="10">
                 <Ellipse Fill="#FFF70606" Height="10" Stroke="Black" Margin="0,0,-0.4,0"/>
                 <Rectangle Fill="White" Height="25" Stroke="Black" Margin="0,0,-0.4,0"/>
             </StackPanel>
-            <TextBox x:Name="gameOverText" Height="119" Canvas.Left="55" TextWrapping="Wrap" Text="Game Over" Canvas.Top="41" Width="710" TextChanged="TextBox_TextChanged" FontFamily="Arial Black" FontSize="100" FontWeight="Bold" FontStyle="Italic" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             <Rectangle Fill="#FF54E712" Height="50" Stroke="Black" Width="50" Canvas.Left="545" Canvas.Top="415" RenderTransformOrigin="8,0.696">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
