@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Window1" Height="600" Width="800">
     <Window.Resources>
-        <Style x:Key="et" TargetType="{x:Type ContentControl}">
+        <!--<Style x:Key="et" TargetType="{x:Type ContentControl}">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ContentControl}">
@@ -15,33 +15,53 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-        </Style>
+        </Style>-->
 
+        <!--<ControlTemplate x:Key="EnemyTemplate" TargetType="{x:Type ContentControl}">
+            <Grid>
+                <Ellipse Fill="Grey" Stroke="Black" Height="100" Width="100"/>
+            </Grid>
+        </ControlTemplate>-->
         <ControlTemplate x:Key="EnemyTemplate" TargetType="{x:Type ContentControl}">
             <Grid>
-                <Ellipse Fill="Red" Stroke="Black" Height="100" Width="100"/>
+                <Ellipse Stroke="Black" Height="100" Width="75">
+                    <Ellipse.Fill>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.GrayTextColorKey}}"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse HorizontalAlignment="Left" Height="35" Margin="10,20,0,0" Stroke="Black" VerticalAlignment="Top" Width="25">
+                    <Ellipse.Fill>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.InactiveCaptionTextColorKey}}"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse HorizontalAlignment="Left" Height="35" Margin="42,20,0,0" Stroke="Black" VerticalAlignment="Top" Width="25" RenderTransformOrigin="1.808,0.44">
+                    <Ellipse.Fill>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.InactiveCaptionTextColorKey}}"/>
+                    </Ellipse.Fill>
+                </Ellipse>
             </Grid>
         </ControlTemplate>
+
     </Window.Resources>
-    <Grid Background="Black">
+    <Grid x:Name="grid" Background="Black">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="160"/>
             <ColumnDefinition/>
             <ColumnDefinition Width="160"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="16*"/>
+            <RowDefinition Height="16"/>
             <RowDefinition Height="25*"/>
             <RowDefinition Height="160"/>
 
         </Grid.RowDefinitions>
         <Button x:Name="start_button" Content="Start！" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Width="75" Click="Button_Click"/>
-        <ProgressBar Grid.Column="1" Grid.Row="2" Height="20" ValueChanged="ProgressBar_ValueChanged"/>
+        <ProgressBar x:Name="pb" Grid.Column="1" Grid.Row="2" Height="20" ValueChanged="ProgressBar_ValueChanged"/>
         <StackPanel Grid.Column="2" Orientation="Vertical" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBox TextWrapping="Wrap" Text="Avoid These"/>
-            <ContentControl Content="ContentControl" Style="{DynamicResource et}" VerticalContentAlignment="Center"/>
+            <ContentControl Content="ContentControl"  VerticalContentAlignment="Center" Template="{DynamicResource EnemyTemplate}" />
         </StackPanel>
-        <Canvas x:Name="playArea" Grid.Row="1" Grid.ColumnSpan="3">
+        <Canvas x:Name="playArea" Grid.Row="1" Grid.ColumnSpan="3" MouseMove="playArea_MouseMove" MouseLeave="playArea_MouseLeave">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF1A4CF4" Offset="0.087"/>
@@ -49,20 +69,11 @@
                 </LinearGradientBrush>
             </Canvas.Background>
             <TextBox x:Name="gameOverText" Height="119" Canvas.Left="55" TextWrapping="Wrap" Text="Game Over" Canvas.Top="41" Width="710" TextChanged="TextBox_TextChanged" FontFamily="Arial Black" FontSize="100" FontWeight="Bold" FontStyle="Italic" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <StackPanel Canvas.Left="28" Orientation="Vertical" Canvas.Top="26" Width="10">
+            <StackPanel x:Name="human" Canvas.Left="28" Orientation="Vertical" Canvas.Top="26" Width="10" MouseDown="human_MouseDown">
                 <Ellipse Fill="#FFF70606" Height="10" Stroke="Black" Margin="0,0,-0.4,0"/>
                 <Rectangle Fill="White" Height="25" Stroke="Black" Margin="0,0,-0.4,0"/>
             </StackPanel>
-            <Rectangle Fill="#FF54E712" Height="50" Stroke="Black" Width="50" Canvas.Left="545" Canvas.Top="415" RenderTransformOrigin="8,0.696">
-                <Rectangle.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="40"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Rectangle.RenderTransform>
-            </Rectangle>
+            <Rectangle x:Name="door" Fill="#FF54E712" Height="50" Stroke="Black" Width="50" Canvas.Left="555" Canvas.Top="259" RenderTransformOrigin="8,0.696" MouseEnter="door_MouseEnter"/>
         </Canvas>
 
     </Grid>
