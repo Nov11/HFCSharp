@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp3ch5", "Wind
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "brackettobrace", "WindowsFormsApp3\brackettobrace.csproj", "{9E62CB6A-D6DB-4EE6-8BF4-FFE933976855}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lauchls", "lauchls\lauchls.csproj", "{D421FDCC-47E3-4512-B043-CFEE51798C05}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{9E62CB6A-D6DB-4EE6-8BF4-FFE933976855}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E62CB6A-D6DB-4EE6-8BF4-FFE933976855}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E62CB6A-D6DB-4EE6-8BF4-FFE933976855}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D421FDCC-47E3-4512-B043-CFEE51798C05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D421FDCC-47E3-4512-B043-CFEE51798C05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D421FDCC-47E3-4512-B043-CFEE51798C05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D421FDCC-47E3-4512-B043-CFEE51798C05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
