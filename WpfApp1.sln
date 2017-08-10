@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp2", "Windows
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp3ch5", "WindowsFormsApp3ch5\WindowsFormsApp3ch5.csproj", "{987FCC81-7B48-411B-AC93-0B3D9A791DC2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "brackettobrace", "WindowsFormsApp3\brackettobrace.csproj", "{9E62CB6A-D6DB-4EE6-8BF4-FFE933976855}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{987FCC81-7B48-411B-AC93-0B3D9A791DC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{987FCC81-7B48-411B-AC93-0B3D9A791DC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{987FCC81-7B48-411B-AC93-0B3D9A791DC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E62CB6A-D6DB-4EE6-8BF4-FFE933976855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E62CB6A-D6DB-4EE6-8BF4-FFE933976855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E62CB6A-D6DB-4EE6-8BF4-FFE933976855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E62CB6A-D6DB-4EE6-8BF4-FFE933976855}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
